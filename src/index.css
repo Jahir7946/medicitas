@@ -1,0 +1,21 @@
+:root {
+  --fondo: #f1f5f9;
+  --panel: #ffffff;
+  --acento: #0f766e;
+  --acento-suave: #ccfbf1;
+  --texto: #1e293b;
+  --gris: #64748b;
+  --borde: #e2e8f0;
+  --peligro: #b91c1c;
+  font-family: system-ui, "Segoe UI", Roboto, sans-serif;
+  color: var(--texto);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--fondo);
+}

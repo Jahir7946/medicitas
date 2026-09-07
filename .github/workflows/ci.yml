@@ -1,0 +1,32 @@
+name: Integracion continua
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main, develop]
+
+jobs:
+  verificar:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Descargar el codigo
+        uses: actions/checkout@v4
+
+      - name: Preparar Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+
+      - name: Instalar dependencias
+        run: npm ci
+
+      - name: Analisis estatico
+        run: npm run lint
+
+      - name: Pruebas unitarias
+        run: npm test
+
+      - name: Compilacion de produccion
+        run: npm run build
