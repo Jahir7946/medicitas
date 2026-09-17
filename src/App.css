@@ -1,0 +1,215 @@
+.app {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 24px 16px 48px;
+}
+
+header h1 {
+  margin: 0;
+  color: var(--acento);
+  font-size: 2rem;
+}
+
+header p {
+  margin: 4px 0 20px;
+  color: var(--gris);
+}
+
+.resumen {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.celda {
+  background: var(--panel);
+  border: 1px solid var(--borde);
+  border-radius: 10px;
+  padding: 12px;
+  text-align: center;
+}
+
+.celda .numero {
+  display: block;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--acento);
+}
+
+.celda .etiqueta {
+  font-size: 0.8rem;
+  color: var(--gris);
+}
+
+.aviso {
+  background: var(--acento-suave);
+  border-left: 4px solid var(--acento);
+  padding: 10px 14px;
+  border-radius: 6px;
+  margin-bottom: 16px;
+  font-size: 0.9rem;
+}
+
+main {
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  gap: 16px;
+  align-items: start;
+}
+
+.tarjeta {
+  background: var(--panel);
+  border: 1px solid var(--borde);
+  border-radius: 12px;
+  padding: 16px;
+}
+
+.tarjeta h2 {
+  margin: 0 0 12px;
+  font-size: 1.1rem;
+}
+
+.form label {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--gris);
+  margin-bottom: 10px;
+}
+
+.form input,
+.form select {
+  width: 100%;
+  margin-top: 4px;
+  padding: 8px;
+  border: 1px solid var(--borde);
+  border-radius: 6px;
+  font-size: 0.9rem;
+}
+
+.fila {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+button {
+  background: var(--acento);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 14px;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+button.peligro {
+  background: var(--peligro);
+}
+
+.errores {
+  color: var(--peligro);
+  font-size: 0.8rem;
+  margin: 0 0 10px;
+  padding-left: 18px;
+}
+
+.filtros {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+
+.chip {
+  background: transparent;
+  color: var(--gris);
+  border: 1px solid var(--borde);
+}
+
+.chip.activo {
+  background: var(--acento);
+  color: #fff;
+  border-color: var(--acento);
+}
+
+.lista {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 10px;
+}
+
+.cita {
+  display: grid;
+  grid-template-columns: 90px 1fr auto;
+  gap: 12px;
+  align-items: center;
+  border: 1px solid var(--borde);
+  border-left: 4px solid var(--acento);
+  border-radius: 8px;
+  padding: 10px 12px;
+}
+
+.cita.estado-cancelada {
+  border-left-color: var(--peligro);
+  opacity: 0.6;
+}
+
+.cita.estado-atendida {
+  border-left-color: var(--gris);
+}
+
+.cita-hora {
+  display: flex;
+  flex-direction: column;
+}
+
+.cita-hora span {
+  font-size: 0.75rem;
+  color: var(--gris);
+}
+
+.cita-datos {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-size: 0.9rem;
+}
+
+.cita-datos span,
+.cita-datos em {
+  font-size: 0.78rem;
+  color: var(--gris);
+}
+
+.cita-acciones {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.badge {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  background: var(--acento-suave);
+  color: var(--acento);
+  padding: 3px 8px;
+  border-radius: 999px;
+}
+
+.vacio {
+  color: var(--gris);
+  font-size: 0.9rem;
+}
+
+@media (max-width: 860px) {
+  main {
+    grid-template-columns: 1fr;
+  }
+  .resumen {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
