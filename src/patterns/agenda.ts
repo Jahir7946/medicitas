@@ -13,7 +13,8 @@ export function hayEmpalme(citas: Cita[], medico: string, fecha: string, hora: s
 export function validar(datos: NuevaCita): string[] {
   const errores: string[] = []
   if (datos.paciente.trim().length < 3) errores.push('El nombre del paciente es obligatorio.')
-  if (!/^\d{10}$/.test(datos.telefono.trim())) errores.push('El telefono debe tener 10 digitos.')
+  const telefono = datos.telefono.replace(/[\s-]/g, '')
+  if (!/^\d{10}$/.test(telefono)) errores.push('El telefono debe tener 10 digitos.')
   if (!datos.fecha) errores.push('Falta la fecha de la cita.')
   if (!datos.hora) errores.push('Falta la hora de la cita.')
   if (!datos.medico) errores.push('Falta seleccionar al medico.')
