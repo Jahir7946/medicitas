@@ -21,6 +21,11 @@ describe('validar', () => {
     expect(validar({ ...base, telefono: '551234' })).toContain('El telefono debe tener 10 digitos.')
   })
 
+  it('acepta el telefono capturado con espacios o guiones', () => {
+    expect(validar({ ...base, telefono: '55 1234 5678' })).toEqual([])
+    expect(validar({ ...base, telefono: '55-1234-5678' })).toEqual([])
+  })
+
   it('rechaza el nombre demasiado corto', () => {
     expect(validar({ ...base, paciente: 'Ab' })).toContain('El nombre del paciente es obligatorio.')
   })
