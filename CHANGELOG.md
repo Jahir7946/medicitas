@@ -2,6 +2,12 @@
 
 El formato sigue Keep a Changelog y el versionado semantico.
 
+## [1.0.1] - 2026-09-28
+
+### Corregido
+- El telefono del paciente ya acepta el formato con espacios o guiones que llega
+  de la recepcion sin rechazar la cita.
+
 ## [1.0.0] - 2026-09-28
 
 ### Agregado
